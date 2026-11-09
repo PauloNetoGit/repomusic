@@ -1,0 +1,13 @@
+analyzer:
+  exclude:
+    - build/**
+
+formatter:
+  page_width: 120
+
+linter:
+  rules:
+    - avoid_print
+    - prefer_const_constructors
+    - prefer_final_fields
+    - use_build_context_synchronously

@@ -1,0 +1,41 @@
+# Gera o APK do app na nuvem do GitHub (grátis), sem instalar nada no computador.
+# Como usar: aba "Actions" do repositório > "Gerar APK" > "Run workflow".
+# O APK aparece em "Artifacts" no fim da execução (≈10 min na primeira vez).
+name: Gerar APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Criar a pasta android/ e ligar o motor de áudio
+        run: |
+          flutter create --platforms=android --org com.pedaleira --project-name pedaleira .
+          dart tool/setup_android.dart
+
+      - name: Compilar
+        run: |
+          flutter pub get
+          flutter build apk --release
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pedaleira-apk
+          path: build/app/outputs/flutter-apk/app-release.apk

@@ -1,0 +1,44 @@
+name: pedaleira
+description: Simulador de pedaleira, amplificadores, cubos e caixas para guitarra e baixo.
+publish_to: 'none'
+
+# versão exibida na Play Store (nome+código). Aumente o número depois do + a cada envio.
+version: 1.0.0+3
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/catalog.json
+  # Fontes livres (SIL OFL / Apache 2.0), licenças em assets/fonts/.
+  fonts:
+    - family: BigShoulders
+      fonts:
+        - asset: assets/fonts/BigShouldersDisplay_700Bold.ttf
+          weight: 700
+        - asset: assets/fonts/BigShouldersDisplay_800ExtraBold.ttf
+          weight: 800
+    - family: Barlow
+      fonts:
+        - asset: assets/fonts/Barlow_400Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Barlow_500Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Barlow_600SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Barlow_700Bold.ttf
+          weight: 700
+    - family: Marker
+      fonts:
+        - asset: assets/fonts/PermanentMarker_400Regular.ttf

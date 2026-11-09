@@ -1,0 +1,10 @@
+{
+  "name": "pedaleira",
+  "private": true,
+  "description": "Atalhos npm para o app Flutter (o Flutter SDK precisa estar instalado).",
+  "scripts": {
+    "flutter": "node tool/npm_flutter.js run",
+    "apk": "node tool/npm_flutter.js apk",
+    "doctor": "node tool/npm_flutter.js doctor"
+  }
+}

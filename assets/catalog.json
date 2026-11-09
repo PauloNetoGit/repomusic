@@ -1,0 +1,1147 @@
+{
+ "version": 1,
+ "irModel": 8,
+ "blocks": [
+  {
+   "id": "gate",
+   "name": "Noise Gate",
+   "category": "pedal",
+   "group": "Dinâmica",
+   "color": "#2B2D33",
+   "desc": "Corta o chiado entre as notas. Coloque no início da cadeia.",
+   "params": [
+    {
+     "name": "Limiar",
+     "min": -90,
+     "max": -20,
+     "def": -60,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Liberação",
+     "min": 5,
+     "max": 500,
+     "def": 100,
+     "unit": "ms",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "comp",
+   "name": "Compressor",
+   "category": "pedal",
+   "group": "Dinâmica",
+   "color": "#1F5FAF",
+   "desc": "Nivela a dinâmica e aumenta a sustentação.",
+   "params": [
+    {
+     "name": "Limiar",
+     "min": -60,
+     "max": 0,
+     "def": -30,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Razão",
+     "min": 1,
+     "max": 20,
+     "def": 4,
+     "unit": ":1",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Ataque",
+     "min": 0.1,
+     "max": 100,
+     "def": 5,
+     "unit": "ms",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Liberação",
+     "min": 10,
+     "max": 1000,
+     "def": 120,
+     "unit": "ms",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Ganho",
+     "min": 0,
+     "max": 30,
+     "def": 8,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Mistura",
+     "min": 0,
+     "max": 1,
+     "def": 1,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "boost",
+   "name": "Clean Boost",
+   "category": "pedal",
+   "group": "Drive",
+   "color": "#C9C9C9",
+   "desc": "Reforço limpo de volume com graves e agudos.",
+   "params": [
+    {
+     "name": "Ganho",
+     "min": 0,
+     "max": 20,
+     "def": 8,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Graves",
+     "min": -10,
+     "max": 10,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Agudos",
+     "min": -10,
+     "max": 10,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "od_green",
+   "name": "Green Drive",
+   "category": "pedal",
+   "group": "Drive",
+   "color": "#2F8F4E",
+   "desc": "Overdrive de médios acentuados, clássico para empurrar o amplificador.",
+   "params": [
+    {
+     "name": "Drive",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Tom",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Nível",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "dist_rodent",
+   "name": "Rodent Dist",
+   "category": "pedal",
+   "group": "Drive",
+   "color": "#1C1C1C",
+   "desc": "Distorção com op-amp e diodos ao terra. O filtro escurece o som.",
+   "params": [
+    {
+     "name": "Distorção",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Filtro",
+     "min": 0,
+     "max": 10,
+     "def": 4,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Nível",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "fuzz",
+   "name": "Vintage Fuzz",
+   "category": "pedal",
+   "group": "Drive",
+   "color": "#B3362C",
+   "desc": "Fuzz de transistor assimétrico, gordo e com sustain.",
+   "params": [
+    {
+     "name": "Fuzz",
+     "min": 0,
+     "max": 10,
+     "def": 7,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Tom",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Nível",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "metal",
+   "name": "Metal Core",
+   "category": "pedal",
+   "group": "Drive",
+   "color": "#3A3A3A",
+   "desc": "Distorção de alto ganho com EQ de três bandas e médio ajustável.",
+   "params": [
+    {
+     "name": "Ganho",
+     "min": 0,
+     "max": 10,
+     "def": 7,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Graves",
+     "min": -12,
+     "max": 12,
+     "def": 2,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Médios",
+     "min": -12,
+     "max": 12,
+     "def": -4,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Freq. médios",
+     "min": 200,
+     "max": 4000,
+     "def": 800,
+     "unit": "Hz",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Agudos",
+     "min": -12,
+     "max": 12,
+     "def": 2,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Nível",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "geq",
+   "name": "EQ Gráfico",
+   "category": "pedal",
+   "group": "Filtro",
+   "color": "#E3E3E3",
+   "desc": "Equalizador de 7 bandas.",
+   "params": [
+    {
+     "name": "100",
+     "min": -12,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "200",
+     "min": -12,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "400",
+     "min": -12,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "800",
+     "min": -12,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "1.6k",
+     "min": -12,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "3.2k",
+     "min": -12,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "6.4k",
+     "min": -12,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Nível",
+     "min": -12,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "wah",
+   "name": "Wah",
+   "category": "pedal",
+   "group": "Filtro",
+   "color": "#222222",
+   "desc": "Wah manual (arraste o pedal) ou automático (segue a palhetada).",
+   "params": [
+    {
+     "name": "Modo",
+     "min": 0,
+     "max": 1,
+     "def": 0,
+     "unit": "",
+     "steps": 2,
+     "labels": [
+      "Manual",
+      "Auto"
+     ]
+    },
+    {
+     "name": "Pedal",
+     "min": 0,
+     "max": 1,
+     "def": 0.5,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Sensibilidade",
+     "min": 0,
+     "max": 1,
+     "def": 0.5,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Ressonância",
+     "min": 1,
+     "max": 12,
+     "def": 6,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "octave",
+   "name": "Octaver",
+   "category": "pedal",
+   "group": "Filtro",
+   "color": "#6A3FA0",
+   "desc": "Oitavas abaixo (-1 e -2). Funciona melhor com notas isoladas.",
+   "params": [
+    {
+     "name": "Direto",
+     "min": 0,
+     "max": 1,
+     "def": 0.7,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Oitava -1",
+     "min": 0,
+     "max": 1,
+     "def": 0.6,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Oitava -2",
+     "min": 0,
+     "max": 1,
+     "def": 0,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Tom",
+     "min": 0,
+     "max": 1,
+     "def": 0.4,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "chorus",
+   "name": "Chorus",
+   "category": "pedal",
+   "group": "Modulação",
+   "color": "#3FA7C9",
+   "desc": "Chorus de duas vozes com toque analógico.",
+   "params": [
+    {
+     "name": "Velocidade",
+     "min": 0.05,
+     "max": 5,
+     "def": 0.8,
+     "unit": "Hz",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Profundidade",
+     "min": 0,
+     "max": 1,
+     "def": 0.5,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Mistura",
+     "min": 0,
+     "max": 1,
+     "def": 0.5,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "flanger",
+   "name": "Flanger",
+   "category": "pedal",
+   "group": "Modulação",
+   "color": "#8E44AD",
+   "desc": "Efeito de jato com realimentação positiva ou negativa.",
+   "params": [
+    {
+     "name": "Velocidade",
+     "min": 0.05,
+     "max": 5,
+     "def": 0.3,
+     "unit": "Hz",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Profundidade",
+     "min": 0,
+     "max": 1,
+     "def": 0.7,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Realimentação",
+     "min": -0.95,
+     "max": 0.95,
+     "def": 0.5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Mistura",
+     "min": 0,
+     "max": 1,
+     "def": 0.5,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "phaser",
+   "name": "Phaser",
+   "category": "pedal",
+   "group": "Modulação",
+   "color": "#E67E22",
+   "desc": "Phaser de 4 a 12 estágios.",
+   "params": [
+    {
+     "name": "Velocidade",
+     "min": 0.05,
+     "max": 5,
+     "def": 0.5,
+     "unit": "Hz",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Profundidade",
+     "min": 0,
+     "max": 1,
+     "def": 0.7,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Realimentação",
+     "min": 0,
+     "max": 0.9,
+     "def": 0.4,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Estágios",
+     "min": 0,
+     "max": 3,
+     "def": 0,
+     "unit": "",
+     "steps": 4,
+     "labels": [
+      "4",
+      "6",
+      "8",
+      "12"
+     ]
+    },
+    {
+     "name": "Mistura",
+     "min": 0,
+     "max": 1,
+     "def": 0.5,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "tremolo",
+   "name": "Tremolo",
+   "category": "pedal",
+   "group": "Modulação",
+   "color": "#D4AC0D",
+   "desc": "Variação de volume, de suave (seno) a picotado (quadrada).",
+   "params": [
+    {
+     "name": "Velocidade",
+     "min": 0.5,
+     "max": 15,
+     "def": 5,
+     "unit": "Hz",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Profundidade",
+     "min": 0,
+     "max": 1,
+     "def": 0.6,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Forma",
+     "min": 0,
+     "max": 1,
+     "def": 0.2,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "vibrato",
+   "name": "Vibrato",
+   "category": "pedal",
+   "group": "Modulação",
+   "color": "#16A085",
+   "desc": "Modulação de afinação 100% molhada.",
+   "params": [
+    {
+     "name": "Velocidade",
+     "min": 0.5,
+     "max": 10,
+     "def": 5,
+     "unit": "Hz",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Profundidade",
+     "min": 0,
+     "max": 1,
+     "def": 0.3,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "delay",
+   "name": "Delay",
+   "category": "pedal",
+   "group": "Tempo",
+   "color": "#2E86C1",
+   "desc": "Delay digital, analógico (escuro e saturado) ou de fita (com wow & flutter).",
+   "params": [
+    {
+     "name": "Tempo",
+     "min": 20,
+     "max": 2000,
+     "def": 380,
+     "unit": "ms",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Repetições",
+     "min": 0,
+     "max": 0.95,
+     "def": 0.35,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Mistura",
+     "min": 0,
+     "max": 1,
+     "def": 0.3,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Tom",
+     "min": 0,
+     "max": 1,
+     "def": 0.6,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Tipo",
+     "min": 0,
+     "max": 2,
+     "def": 0,
+     "unit": "",
+     "steps": 3,
+     "labels": [
+      "Digital",
+      "Analógico",
+      "Fita"
+     ]
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "reverb",
+   "name": "Reverb",
+   "category": "pedal",
+   "group": "Tempo",
+   "color": "#5D6D7E",
+   "desc": "Reverberação de sala, salão ou placa.",
+   "params": [
+    {
+     "name": "Tipo",
+     "min": 0,
+     "max": 2,
+     "def": 0,
+     "unit": "",
+     "steps": 3,
+     "labels": [
+      "Sala",
+      "Salão",
+      "Placa"
+     ]
+    },
+    {
+     "name": "Decaimento",
+     "min": 0.2,
+     "max": 10,
+     "def": 1.8,
+     "unit": "s",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Pré-atraso",
+     "min": 0,
+     "max": 200,
+     "def": 15,
+     "unit": "ms",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Tom",
+     "min": 0,
+     "max": 1,
+     "def": 0.5,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Mistura",
+     "min": 0,
+     "max": 1,
+     "def": 0.25,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "volume",
+   "name": "Volume",
+   "category": "pedal",
+   "group": "Utilitário",
+   "color": "#4A4A4A",
+   "desc": "Pedal de volume.",
+   "params": [
+    {
+     "name": "Nível",
+     "min": -60,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": []
+  },
+  {
+   "id": "amp",
+   "name": "Amplificador",
+   "category": "amp",
+   "group": "Cabeçote",
+   "color": "#2C2C2C",
+   "desc": "Cabeçote valvulado ou transistorizado com tonestack modelado a partir do circuito.",
+   "params": [
+    {
+     "name": "Ganho",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Graves",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Médios",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Agudos",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Presença",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Master",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": [
+    {
+     "name": "Clean Americano",
+     "desc": "Limpo cristalino com muito headroom, inspirado nos combos americanos dos anos 60."
+    },
+    {
+     "name": "Tweed 59",
+     "desc": "Limpo quente que quebra fácil ao palhetar forte. Blues e rock clássico."
+    },
+    {
+     "name": "Chime Classe A",
+     "desc": "Brilhante e com compressão de power amp. Britpop, jangle e rock dos anos 60."
+    },
+    {
+     "name": "Brit Plexi",
+     "desc": "Crunch britânico clássico dos anos 60/70. Responde muito ao volume da guitarra."
+    },
+    {
+     "name": "Brit 800",
+     "desc": "Rock e hard rock dos anos 80, mais ganho e médios agressivos."
+    },
+    {
+     "name": "Moderno Hi-Gain",
+     "desc": "Alto ganho moderno, grave encorpado. Metal e rock pesado."
+    },
+    {
+     "name": "Metal 5150",
+     "desc": "Ganho extremo e apertado para riffs rápidos."
+    },
+    {
+     "name": "Jazz Transistor",
+     "desc": "Transistor limpo e plano, ótimo com chorus. Jazz e funk."
+    },
+    {
+     "name": "Transistor Drive",
+     "desc": "Drive de transistor de cubinho de estudo, áspero e direto."
+    },
+    {
+     "name": "Baixo Valvulado",
+     "desc": "Amplificador de baixo valvulado, grave profundo e saturação suave."
+    }
+   ]
+  },
+  {
+   "id": "combo",
+   "name": "Cubo",
+   "category": "combo",
+   "group": "Combo",
+   "color": "#5A3A22",
+   "desc": "Amplificador e falante na mesma caixa, prontos para tocar.",
+   "params": [
+    {
+     "name": "Ganho",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Graves",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Médios",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Agudos",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Presença",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Master",
+     "min": 0,
+     "max": 10,
+     "def": 5,
+     "unit": "",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Microfone",
+     "min": 0,
+     "max": 1,
+     "def": 0.3,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": [
+    {
+     "name": "Cubo Transistor 1x10",
+     "desc": "O cubinho de estudo: transistor, falante de 10\" e muita personalidade."
+    },
+    {
+     "name": "Cubo Americano 1x12",
+     "desc": "Combo valvulado limpo de 1x12 com reverb de mola no coração."
+    },
+    {
+     "name": "Cubo Tweed 1x12",
+     "desc": "Combo tweed dos anos 50: quente, comprimido e cheio de harmônicos."
+    },
+    {
+     "name": "Cubo Chime 2x12",
+     "desc": "Combo classe A britânico 2x12, brilho e compressão natural."
+    },
+    {
+     "name": "Cubo Jazz 2x12",
+     "desc": "Combo de transistor 2x12 limpo e estéreo, o favorito do jazz."
+    },
+    {
+     "name": "Cubo Brit 2x12",
+     "desc": "Combo britânico 2x12 para crunch e rock."
+    },
+    {
+     "name": "Cubo Blues 2x10",
+     "desc": "Combo 2x10 com breakup suave, para blues."
+    },
+    {
+     "name": "Cubo de Baixo 1x15",
+     "desc": "Combo de baixo valvulado com falante de 15\"."
+    }
+   ]
+  },
+  {
+   "id": "cab",
+   "name": "Caixa",
+   "category": "cab",
+   "group": "Caixa",
+   "color": "#1E1E1E",
+   "desc": "Simulação de caixa e microfone. Use \"IR Personalizado\" para carregar arquivos WAV.",
+   "params": [
+    {
+     "name": "Microfone",
+     "min": 0,
+     "max": 1,
+     "def": 0.3,
+     "unit": "%",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Corte graves",
+     "min": 20,
+     "max": 300,
+     "def": 70,
+     "unit": "Hz",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Corte agudos",
+     "min": 2000,
+     "max": 16000,
+     "def": 10000,
+     "unit": "Hz",
+     "steps": 0,
+     "labels": []
+    },
+    {
+     "name": "Nível",
+     "min": -24,
+     "max": 12,
+     "def": 0,
+     "unit": "dB",
+     "steps": 0,
+     "labels": []
+    }
+   ],
+   "models": [
+    {
+     "name": "1x12 Aberta",
+     "desc": "Combo americano de fundo aberto: grave solto e agudos brilhantes."
+    },
+    {
+     "name": "2x12 Aberta",
+     "desc": "Duas caixas de 12\" alnico, médios-agudos que brilham."
+    },
+    {
+     "name": "4x12 Fechada V30",
+     "desc": "Caixa fechada com falantes de médios agressivos, para drive e metal."
+    },
+    {
+     "name": "4x12 Fechada Greenback",
+     "desc": "Caixa fechada britânica clássica, médios suaves e quentes."
+    },
+    {
+     "name": "2x10 Combo",
+     "desc": "Dois falantes de 10\": ataque rápido, ótimo para limpo e blues."
+    },
+    {
+     "name": "1x10 Pequena",
+     "desc": "Cubinho de estudo: médios anasalados e pouco grave."
+    },
+    {
+     "name": "1x15 Baixo",
+     "desc": "Caixa de 15\" para baixo, grave redondo."
+    },
+    {
+     "name": "8x10 Baixo",
+     "desc": "Geladeira 8x10 para baixo, grave enorme e médios presentes."
+    },
+    {
+     "name": "IR Personalizado",
+     "desc": "Carregue um arquivo WAV de resposta ao impulso (IR) de qualquer caixa."
+    }
+   ]
+  }
+ ]
+}
