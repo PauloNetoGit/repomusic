@@ -3,7 +3,7 @@ description: Simulador de pedaleira, amplificadores, cubos e caixas para guitarr
 publish_to: 'none'
 
 # versão exibida na Play Store (nome+código). Aumente o número depois do + a cada envio.
-version: 1.0.0+3
+version: 1.0.0+6
 
 environment:
   sdk: ^3.11.0

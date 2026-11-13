@@ -167,13 +167,15 @@ void _patchManifest(File f) {
     s = _insertAfterLine(s, RegExp(r'<manifest[^>]*>'), perms);
   }
   s = s.replaceFirst(RegExp(r'android:label="[^"]*"'), 'android:label="$_appLabel"');
+  // Nome completo da activity: não depende de como o Gradle resolve ".MainActivity".
+  s = s.replaceFirst(RegExp(r'android:name="[\w.]*\.MainActivity"'), 'android:name="$_applicationId.MainActivity"');
   f.writeAsStringSync(s);
   _ok('AndroidManifest.xml: permissão de microfone e nome "$_appLabel"');
 }
 
 void _installActivity(String root) {
-  final src = File('$root/android_overlay/MainActivity.kt');
-  if (!src.existsSync()) _fail('android_overlay/MainActivity.kt não encontrado');
+  final src = File('$root/android_overlay/MainActivity.java');
+  if (!src.existsSync()) _fail('android_overlay/MainActivity.java não encontrado');
   final candidates = <File>[];
   for (final base in ['kotlin', 'java']) {
     final d = Directory('$root/android/app/src/main/$base');
@@ -182,19 +184,26 @@ void _installActivity(String root) {
       if (e is File && (e.path.endsWith('MainActivity.kt') || e.path.endsWith('MainActivity.java'))) candidates.add(e);
     }
   }
-  if (candidates.isEmpty) _fail('MainActivity gerada pelo flutter create não encontrada');
-  final existing = candidates.first;
-  if (existing.path.endsWith('.java')) {
-    _fail(
-      'O projeto Android foi gerado em Java. Apague a pasta android/ e rode:\n'
-      '  flutter create --platforms=android -a kotlin --org com.seudominio --project-name pedaleira .',
-    );
+  // A MainActivity fica no mesmo pacote do applicationId e do namespace, em
+  // Java (sempre compilado pelo Android, sem depender do plugin Kotlin). Se ela
+  // ficar de fora do app, o Android não encontra a tela inicial e o app fecha
+  // ao abrir (ClassNotFoundException).
+  final dest = File('$root/android/app/src/main/java/${_applicationId.replaceAll('.', '/')}/MainActivity.java');
+  for (final f in candidates) {
+    if (f.path != dest.path) f.deleteSync();
   }
-  final current = existing.readAsStringSync();
-  final pkg = RegExp(r'^package\s+([\w.]+)', multiLine: true).firstMatch(current)?.group(1);
-  if (pkg == null) _fail('pacote não encontrado em ${existing.path}');
-  existing.writeAsStringSync(src.readAsStringSync().replaceFirst('__PACKAGE__', pkg));
-  _ok('MainActivity.kt instalada (pacote $pkg)');
+  dest.parent.createSync(recursive: true);
+  dest.writeAsStringSync(src.readAsStringSync().replaceFirst('__PACKAGE__', _applicationId));
+  _ok('MainActivity.java instalada (pacote $_applicationId)');
+
+  // Regra do R8 (otimizador da versão release): nunca remover a tela inicial.
+  final rules = File('$root/android/app/proguard-rules.pro');
+  final keep = '# $_marker: mantém a tela inicial do app\n-keep class $_applicationId.MainActivity { *; }\n';
+  final current = rules.existsSync() ? rules.readAsStringSync() : '';
+  if (!current.contains('-keep class $_applicationId.MainActivity')) {
+    rules.writeAsStringSync(current.isEmpty || current.endsWith('\n') ? current + keep : '$current\n$keep');
+  }
+  _ok('proguard-rules.pro: MainActivity protegida no build de release');
 }
 
 /// Copia os ícones (android_overlay/res) por cima dos ícones padrão do Flutter.
@@ -226,6 +235,14 @@ void _setApplicationId(File f) {
   } else {
     _fail('applicationId não encontrado em ${f.path}');
   }
+  // namespace = pacote do código (R e MainActivity). Precisa ser igual ao applicationId.
+  final nsKts = RegExp(r'namespace\s*=\s*"[^"]*"');
+  final nsGroovy = RegExp(r'''namespace\s+['"][^'"]*['"]''');
+  if (nsKts.hasMatch(s)) {
+    s = s.replaceFirst(nsKts, 'namespace = "$_applicationId"');
+  } else if (nsGroovy.hasMatch(s)) {
+    s = s.replaceFirst(nsGroovy, 'namespace "$_applicationId"');
+  }
   f.writeAsStringSync(s);
-  _ok('Identificador do app: $_applicationId');
+  _ok('Identificador e namespace do app: $_applicationId');
 }

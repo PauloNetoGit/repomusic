@@ -1,12 +1,16 @@
 # Gera o APK do app na nuvem do GitHub (grátis), sem instalar nada no computador.
 # Como usar: aba "Actions" do repositório > "Gerar APK" > "Run workflow".
-# O APK aparece em "Artifacts" no fim da execução (≈10 min na primeira vez).
+# O APK aparece em "Artifacts" no fim da execução e também na branch "apk"
+# (arquivo PedalFX.apk), ≈10 min na primeira vez.
 name: Gerar APK
 
 on:
   workflow_dispatch:
   push:
     branches: [main, master]
+
+permissions:
+  contents: write
 
 jobs:
   apk:
@@ -35,7 +39,25 @@ jobs:
           flutter pub get
           flutter build apk --release
 
+      - name: Conferir se a tela inicial está no APK
+        run: |
+          n=$(unzip -p build/app/outputs/flutter-apk/app-release.apk 'classes*.dex' | grep -a -c "Lcom/uchord/pedalfx/MainActivity;" || true)
+          echo "MainActivity encontrada: $n"
+          test "$n" -gt 0
+
       - uses: actions/upload-artifact@v4
         with:
           name: pedaleira-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Publicar o APK na branch "apk"
+        run: |
+          mkdir out
+          cp build/app/outputs/flutter-apk/app-release.apk out/PedalFX.apk
+          cd out
+          git init -q -b apk
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add PedalFX.apk
+          git commit -qm "PedalFX.apk (${GITHUB_SHA::7})"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" apk

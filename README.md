@@ -197,7 +197,7 @@ lib/
   state/factory_presets.dart presets de fábrica
   services/                  canal Android (permissão, seletor de IR, dispositivos) e arquivos
   ui/                        telas: pedaleira, editor de bloco, catálogo, afinador, presets, ajustes
-android_overlay/MainActivity.kt   instalada pelo tool/setup_android.dart
+android_overlay/MainActivity.java instalada pelo tool/setup_android.dart
 assets/catalog.json          cópia do catálogo (usada só quando a lib nativa não está presente)
 ```
 
